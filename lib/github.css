@@ -1,0 +1,35 @@
+/* Light theme */
+.hljs {
+  color: #24292e;
+  background: #f6f8fa;
+}
+
+.hljs-keywords { color: #d73a49; }
+.hljs-strings { color: #032f62; }
+.hljs-comments { color: #6a737d; }
+.hljs-numbers { color: #005cc5; }
+.hljs-functions { color: #6f42c1; }
+.hljs-tags { color: #22863a; }
+.hljs-attributes { color: #005cc5; }
+.hljs-properties { color: #005cc5; }
+.hljs-values { color: #032f62; }
+.hljs-selectors { color: #22863a; }
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  .hljs {
+    color: #c9d1d9;
+    background: #0d1117;
+  }
+
+  .hljs-keywords { color: #ff7b72; }
+  .hljs-strings { color: #a5d6ff; }
+  .hljs-comments { color: #8b949e; }
+  .hljs-numbers { color: #79c0ff; }
+  .hljs-functions { color: #d2a8ff; }
+  .hljs-tags { color: #7ee787; }
+  .hljs-attributes { color: #79c0ff; }
+  .hljs-properties { color: #79c0ff; }
+  .hljs-values { color: #a5d6ff; }
+  .hljs-selectors { color: #7ee787; }
+} 

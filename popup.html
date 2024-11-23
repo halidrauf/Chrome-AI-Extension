@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemini Companion</title>
+    <link rel="stylesheet" href="styles/popup.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="stylesheet" href="lib/github.min.css" />
+    <script src="lib/marked.min.js"></script>
+    <script src="lib/highlight.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    />
+  </head>
+  <body>
+    <div class="app-container">
+      <button class="settings-button" id="settings-button" title="Settings">
+        <span class="material-icons">settings</span>
+      </button>
+
+      <div class="settings-panel" id="settings-panel">
+        <div class="settings-header">
+          <h2>Settings</h2>
+          <button class="close-button" id="close-settings" title="Close">
+            <span class="material-icons">close</span>
+          </button>
+        </div>
+        <div class="settings-content">
+          <div class="setting-item">
+            <label for="api-key">Gemini API Key</label>
+            <div class="api-key-input">
+              <input
+                type="password"
+                id="api-key"
+                placeholder="Enter your API key"
+              />
+              <button class="toggle-visibility" title="Toggle visibility">
+                <span class="material-icons">visibility_off</span>
+              </button>
+            </div>
+            <small class="helper-text">
+              Get your API key from the
+              <a
+                href="https://makersuite.google.com/app/apikey"
+                target="_blank"
+                rel="noopener"
+                >Google AI Studio</a
+              >
+            </small>
+          </div>
+
+          <div class="setting-item">
+            <label for="model-select">Model</label>
+            <select id="model-select" class="model-select">
+              <option value="gemini-pro">Gemini Pro</option>
+              <option value="gemini-pro-vision">Gemini Pro Vision</option>
+            </select>
+            <small class="helper-text">
+              Select the model you want to use for generating responses
+            </small>
+          </div>
+
+          <div class="setting-item">
+            <label class="toggle-label">
+              Voice Activation
+              <div class="toggle-switch">
+                <input type="checkbox" id="voice-activation-toggle" />
+                <span class="toggle-slider"></span>
+              </div>
+            </label>
+            <small class="helper-text">
+              Enable "Hey Gemini" voice activation. When enabled, you can
+              activate the extension by saying "Hey Gemini"
+            </small>
+          </div>
+
+          <button class="save-button" id="save-settings">Save Settings</button>
+        </div>
+      </div>
+
+      <div class="chat-container">
+        <div class="chat-messages" id="chat-messages">
+          <!-- Messages will be inserted here -->
+        </div>
+        <div class="input-container">
+          <textarea
+            id="user-input"
+            placeholder="Ask me anything..."
+            rows="1"
+          ></textarea>
+          <div class="input-actions">
+            <button class="action-button mic-button" title="Voice Input">
+              <span class="material-icons">mic</span>
+            </button>
+            <button
+              class="action-button send-button"
+              id="send-button"
+              title="Send Message"
+            >
+              <span class="material-icons">send</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="mic-status"></div>
+    <button id="enable-mic" style="display: none">Enable Microphone</button>
+    <script src="scripts/popup.js"></script>
+    <script>
+      // Configure marked with default options
+      marked.setOptions({
+        gfm: true,
+        breaks: true,
+        highlight: function (code, lang) {
+          if (lang && hljs.getLanguage(lang)) {
+            try {
+              return hljs.highlight(code, { language: lang }).value;
+            } catch (err) {}
+          }
+          return code;
+        },
+      });
+    </script>
+  </body>
+</html>
