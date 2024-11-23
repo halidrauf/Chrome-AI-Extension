@@ -1,6 +1,6 @@
 # AI Chat Assistant Chrome Extension
 
-A powerful Chrome extension that integrates with Google's Gemini AI to provide intelligent chat assistance, webpage analysis, and image processing capabilities.
+A prototype Chrome extension that integrates with Google's Gemini AI to provide intelligent chat assistance, webpage analysis, and image processing capabilities.
 
 ## Features
 
@@ -101,7 +101,3 @@ A powerful Chrome extension that integrates with Google's Gemini AI to provide i
 - `scripting`
 - `storage`
 - `<all_urls>`
-
-## Development
-
-### Project Structure
